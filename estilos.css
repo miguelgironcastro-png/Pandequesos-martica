@@ -1,0 +1,663 @@
+/* IDENTIDAD VISUAL: amarillo y rojo de marca como acentos; crema como fondo. */
+:root {
+    --color-principal: #FFF200;
+    --color-secundario: #FF0000;
+    --color-complementario: #4A1F00;
+    --color-fondo: #FFF9F0;
+    --color-texto: #4A1F00;
+    --color-superficie: #FFFFFF;
+    --color-blanco: #FFFFFF;
+    --color-crema: #F7EBDD;
+    --color-borde: #E8D8C5;
+}
+
+/* MODELO DE CAJA Y ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h1, h2, h3, .marca-nombre {
+    font-family: 'Lilita One', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+h1 {
+    font-size: 64px;
+    margin: 14px 0 24px;
+}
+
+h2 {
+    font-size: 44px;
+    margin: 10px 0 22px;
+}
+
+h3 {
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 12px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.seccion {
+    padding: 80px 0;
+}
+
+.etiqueta {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.titulo-seccion {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.detalle {
+    font-size: 13px;
+}
+
+.aviso {
+    font-size: 13px;
+    padding: 14px;
+
+    background: var(--color-crema);
+
+    border-left: 3px solid var(--color-complementario);
+    margin-bottom: 24px;
+}
+
+/* BOTONES: marrón y blanco; amarillo al pasar el cursor. */
+.boton {
+    display: inline-block;
+    padding: 14px 22px;
+
+    border: 2px solid var(--color-complementario);
+    border-radius: 8px;
+    background: var(--color-complementario);
+    color: var(--color-blanco);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow: none;
+}
+
+.boton:hover {
+    background: var(--color-principal);
+
+    color: var(--color-complementario);
+}
+
+.boton:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 4px;
+}
+
+.boton-pequeno {
+    padding: 10px 18px;
+}
+
+.boton-claro {
+    background: var(--color-principal);
+    color: var(--color-complementario);
+    box-shadow: none;
+}
+
+.enlace {
+    font-weight: 700;
+    text-underline-offset: 5px;
+}
+
+.enlace:hover {
+    text-decoration-thickness: 3px;
+}
+
+/* HEADER Y MENU: Flexbox */
+.encabezado {
+    background: var(--color-superficie);
+
+    border-bottom: 3px solid var(--color-principal);
+    padding: 18px 0;
+}
+
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.marca-superior {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.marca-nombre {
+    font-size: 32px;
+    color: var(--color-secundario);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 6px 0;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    border-color: var(--color-secundario);
+}
+
+/* HERO: columnas con Flexbox */
+.hero {
+    padding: 70px 0;
+
+    background: var(--color-fondo);
+}
+
+.hero-contenido {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    min-height: 500px;
+}
+
+.hero-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.introduccion {
+    font-size: 20px;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.hero-imagen {
+    flex: 1;
+    min-width: 0;
+    background: var(--color-superficie);
+
+    border: 1px solid var(--color-borde);
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow: 0 12px 30px rgba(74, 31, 0, 0.12);
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.franja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 22px;
+    background: var(--color-complementario);
+    color: var(--color-principal);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.franja p {
+    margin: 0;
+}
+
+/* NOSOTROS: Flexbox */
+.nosotros {
+    background: var(--color-superficie);
+}
+
+.nosotros-contenido {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.nosotros-imagen, .nosotros-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.nosotros-imagen {
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid var(--color-borde);
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.lista-beneficios {
+    padding-left: 22px;
+    margin-bottom: 28px;
+}
+
+/* PRODUCTOS: tarjetas que se reorganizan con flex-wrap */
+.productos {
+    background: var(--color-fondo);
+}
+
+.productos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.producto {
+    flex: 1 1 30%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-superficie);
+
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 18px rgba(74, 31, 0, 0.07);
+}
+
+.producto:hover {
+    box-shadow: 0 10px 24px rgba(74, 31, 0, 0.14);
+}
+
+.producto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.producto-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    padding: 24px;
+}
+
+.producto-texto .etiqueta {
+    font-size: 10px;
+}
+
+.precio {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* SERVICIOS / BENEFICIOS */
+.servicios {
+    background: var(--color-superficie);
+}
+
+.servicios-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.servicio {
+    flex: 1 1 30%;
+    padding: 30px;
+
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    text-align: center;
+    background: var(--color-fondo);
+}
+
+.icono {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-principal);
+    font-size: 32px;
+}
+
+/* TABLA: desplazamiento horizontal si el dispositivo es estrecho */
+.opciones {
+    background: var(--color-crema);
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    background: var(--color-superficie);
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+caption {
+    padding: 16px;
+    font-size: 13px;
+    text-align: left;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #D6C6AC;
+    font-size: 14px;
+}
+
+thead {
+    background: var(--color-complementario);
+    color: var(--color-principal);
+}
+
+/* GALERIA: seis fotografías con Flexbox */
+.galeria {
+    background: var(--color-superficie);
+}
+
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.galeria-contenedor figure {
+    flex: 1 1 30%;
+    min-width: 0;
+    border-radius: 14px;
+    overflow: hidden;
+
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+}
+
+.galeria-contenedor img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* CONTACTO Y FORMULARIO */
+.contacto {
+    background: var(--color-crema);
+}
+
+.contacto-contenido {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.contacto-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+address {
+    font-style: normal;
+    margin: 30px 0;
+    overflow-wrap: break-word;
+}
+
+.formulario {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+    background: var(--color-superficie);
+
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 28px rgba(74, 31, 0, 0.08);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #A38B70;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--color-texto);
+    background: var(--color-blanco);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.campos-fila {
+    display: flex;
+    gap: 16px;
+}
+
+.campos-fila .campo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* FOOTER: Flexbox */
+.pie-pagina {
+    background: var(--color-complementario);
+    color: var(--color-superficie);
+    padding: 44px 0 20px;
+}
+
+.pie-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.pie-contenido p {
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.pie-contenido .marca-nombre {
+    font-size: 28px;
+    color: var(--color-principal);
+}
+
+.creditos {
+    margin-top: 30px;
+    border-top: 1px solid #A38B70;
+    padding-top: 20px;
+    font-size: 12px;
+    overflow-wrap: break-word;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.derechos {
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* TABLETS Y CELULARES: responsive básico, sin Grid ni JavaScript */
+@media (max-width: 768px) {
+    .seccion {
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .encabezado-contenido {
+        flex-direction: column;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero-contenido, .nosotros-contenido, .contacto-contenido {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-imagen, .nosotros-imagen, .formulario {
+        width: 100%;
+    }
+
+    .hero-imagen img {
+        height: 320px;
+    }
+
+    .producto, .servicio, .galeria-contenedor figure {
+        flex-basis: 45%;
+    }
+
+    .franja {
+        gap: 14px;
+    }
+
+    .formulario {
+        padding: 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .producto, .servicio, .galeria-contenedor figure {
+        flex-basis: 100%;
+    }
+
+    .campos-fila, .pie-contenido {
+        flex-direction: column;
+    }
+
+    .hero-imagen img, .nosotros-imagen img {
+        height: 260px;
+    }
+
+    .acciones {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
